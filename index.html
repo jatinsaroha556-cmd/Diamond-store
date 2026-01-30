@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diamond Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    text-align:center;
+}
+h1{margin-top:25px;}
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:20px;
+}
+.card{
+    background:white;
+    color:black;
+    width:260px;
+    margin:15px;
+    padding:20px;
+    border-radius:12px;
+}
+.price{
+    font-size:26px;
+    font-weight:bold;
+}
+button{
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:#0077ff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{background:#005fd4;}
+#paymentBox{
+    display:none;
+    background:white;
+    color:black;
+    margin:20px auto;
+    padding:20px;
+    border-radius:12px;
+    width:300px;
+}
+#paymentBox img{
+    width:220px;
+    margin:15px 0;
+}
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+</style>
+</head>
+<body>
+<h1>💎 Diamond Store 💎</h1>
+<p>Instant Free Fire Diamonds</p>
+
+<div class="container">
+  <div class="card">
+    <h2>150 Diamonds</h2>
+    <p class="price">₹40</p>
+    <button onclick="pay('150 Diamonds - ₹40')">Buy Now</button>
+  </div>
+  <div class="card">
+    <h2>300 Diamonds</h2>
+    <p class="price">₹100</p>
+    <button onclick="pay('300 Diamonds - ₹100')">Buy Now</button>
+  </div>
+  <div class="card">
+    <h2>1000 Diamonds</h2>
+    <p class="price">₹250</p>
+    <button onclick="pay('1000 Diamonds - ₹250')">Buy Now</button>
+  </div>
+  <div class="card">
+    <h2>2000 Diamonds</h2>
+    <p class="price">₹500</p>
+    <button onclick="pay('2000 Diamonds - ₹500')">Buy Now</button>
+  </div>
+</div>
+
+<div id="paymentBox">
+  <h2 id="plan"></h2>
+  <input type="text" id="ffid" placeholder="Enter your Free Fire User ID">
+  <p><b>Scan QR & Pay</b></p>
+  <img src="qr.png" alt="UPI QR Code">
+  <p>Payment ke baad <b>FF ID + Screenshot</b> WhatsApp par bheje</p>
+</div>
+
+<script>
+function pay(plan){
+    document.getElementById("paymentBox").style.display="block";
+    document.getElementById("plan").innerText=plan;
+    window.scrollTo(0,document.body.scrollHeight);
+}
+</script>
+</body>
+</html>
